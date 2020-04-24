@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <title>Arcwork &mdash; Website Template by Colorlib</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="css/aos.css">
+
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script type="text/javascript">
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+  animationEnabled: true,
+  theme: "light2",
+  title:{
+    text: "Numri i rasteve brenda dites ne 10 ditet e fundit"
+  },
+  axisY:{
+    includeZero: false
+  },
+  data: [{        
+    type: "line",
+        indexLabelFontSize: 16,
+    dataPoints: [
+      
+      { y: 10},
+      { y:36},
+      { y: 26},
+      { y: 31},
+      { y: 30 },
+      { y: 51 , indexLabel: "\u2191 nr me i madh",markerColor: "red", markerType: "triangle" },
+      { y: 37 },
+      { y: 7}, 
+      { y: 26},
+      { y: 6 , indexLabel: "\u2193 nr me i ulet",markerColor: "DarkSlateGrey", markerType: "cross" },
+      { y: 39}
+
+
+
+
+
+
+    ]
+  }]
+});
+var chart1 = new CanvasJS.Chart("chartContainer1", {
+  animationEnabled: true,
+  title:{
+    text: "Statistikat mbi COVID - 19 ne disa shtete te botes"
+  },
+  axisY: {
+    title: "Shtetet"
+  },
+  legend: {
+    cursor:"pointer",
+    itemclick : toggleDataSeries
+  },
+  toolTip: {
+    shared: true,
+    content: toolTipFormatter
+  },
+  data: [{
+    type: "bar",
+    showInLegend: true,
+    name: "Viktimat",
+    color: "gold",
+    dataPoints: [
+    { y: 19,label: "Kosova"},
+      { y: 27, label: "Shqiperia"},
+      { y: 4632, label: "Kina" },
+      { y: 25085, label: "Italia" },
+      { y: 47684, label: "SHBA" },
+      { y: 5319, label: "Gjermania" },
+      { y: 21340, label: "Franca" }
+
+      
+    ]
+  },
+  {
+    type: "bar",
+    showInLegend: true,
+    name: "Te infektuar",
+    color: "silver",
+    dataPoints: [
+
+     
+
+      
+      {y: 669, label: "Kosova"},
+      { y: 663, label: "Shqiperia"},
+      { y: 82798, label: "Kina" },
+      { y: 189327, label: "Italia" },
+      { y: 886709, label: "SHBA" },
+      { y: 153773, label: "Gjermania" },
+      { y: 160340, label: "Franca" }
+
+
+
+
+
+    ]
+  },
+  {
+    type: "bar",
+    showInLegend: true,
+    name: "Te sheruar",
+    color: "#A57164",
+    dataPoints: [
+    {y:159, label:"Kosova"},
+    
+    
+      { y: 385, label: "Shqiperia"},
+      { y:77217, label: "Kina" },
+      { y: 54543, label: "Italia" },
+      { y: 84050, label: "SHBA" },
+      { y:103300, label: "Gjermania" },
+      { y:50657, label: "Franca" }
+
+      
+
+
+
+
+    ]
+  }]
+});
+chart1.render();
+
+function toolTipFormatter(e) {
+  var str = "";
+  var total = 0 ;
+  var str3;
+  var str2 ;
+  for (var i = 0; i < e.entries.length; i++){
+    var str1 = "<span style= \"color:"+e.entries[i].dataSeries.color + "\">" + e.entries[i].dataSeries.name + "</span>: <strong>"+  e.entries[i].dataPoint.y + "</strong> <br/>" ;
+    total = e.entries[i].dataPoint.y + total;
+    str = str.concat(str1);
+  }
+  str2 = "<strong>" + e.entries[0].dataPoint.label + "</strong> <br/>";
+  str3 = "<span style = \"color:Tomato\">Total: </span><strong>" + total + "</strong><br/>";
+  return (str2.concat(str)).concat(str3);
+}
+
+function toggleDataSeries(e) {
+  if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+    e.dataSeries.visible = false;
+  }
+  else {
+    e.dataSeries.visible = true;
+  }
+  chart1.render();
+}
+
+chart.render();
+
+}
+
+
+
+</script>
+
+  </head>
+
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+     
+    
+    <div class="site-wrap" id="home-section">
+
+      <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+          <div class="site-mobile-menu-close mt-3">
+            <span class="icon-close2 js-menu-toggle"></span>
+          </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+      </div>
+
+
+
+      <header class="site-navbar site-navbar-target" role="banner">
+
+        <div class="container">
+          <div class="row align-items-center position-relative">
+
+            <div class="col-3 ">
+              <div class="site-logo">
+                <a href="index.html" class="font-weight-bold">COVID - 19</a>
+              </div>
+            </div>
+
+            <div class="col-9  text-right">
+              
+
+              <span class="d-inline-block d-lg-none"><a href="#" class="text-primary site-menu-toggle js-menu-toggle py-5"><span class="icon-menu h3 text-primary"></span></a></span>
+
+              
+
+              <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
+                <ul class="site-menu main-menu js-clone-nav ml-auto ">
+                  <li><a href="index.html" class="nav-link">COVID - 19</a></li>
+                  <li><a href="about.html" class="nav-link">Simptomat</a></li>
+                  
+
+
+                  <li><a href="blog.html" class="nav-link">Parandalimi</a></li>
+                  <li class="active"><a href="contact.html" class="nav-link">Perhapja</a></li>
+                </ul>
+              </nav>
+            </div>
+
+            
+          </div>
+        </div>
+
+      </header>
+
+    <div class="ftco-blocks-cover-1">
+      <div class="site-section-cover half-bg">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-lg-8">
+              <h1 class="mb-5 text-primary font-weight-bold"  data-aos="fade-up">Perhapja e COVID - 19 sipas statistikave </h1>
+              
+              
+            </div>
+          </div>
+        </div>
+       
+               
+             <div id="chartContainer1" style="height: 300px; width: 100%;"></div>
+
+             <figure>
+       <img alt="Coronavirus World Map: Tracking The Spread Of The Outbreak | WBUR News" class="n3VNCb" src="https://media.npr.org/assets/img/2020/04/20/seamus-coronavirus-d3-world-map-20200323_wide-2f7310f870e4a5efd2043d3697f78d906f03dee0.png?s=6" jsname="HiaYvf" jsaction="load:XAeZkd;" data-iml="219435.01000000106" style="width:30%;
+        height: 344.9px;
+         margin: 20px;
+         float:right;
+         ">
+         
+       </figure>
+      </div>
+      
+    </div>
+
+    <div class="site-section bg-left-half">
+
+      <div class="container">
+
+        
+        <div class="row">
+          <div class="col-lg-8 mb-5" >
+            <form action="#" method="post">
+
+              <div class="form-group row">
+                
+                <div class="col-md-6 mb-4 mb-lg-0">
+                  
+                </div>
+                <div class="col-md-6">
+                  
+              </div>
+
+              <div class="form-group row">
+                <div class="col-md-12">
+                  
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-md-12">
+                  
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-6 mr-auto">
+
+                  
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-lg-4 ml-auto">
+
+            <div class="bg-white p-3 p-md-5">
+              
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div> <!-- END .site-section -->
+
+    <div class="footer site-section">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-3">
+            <div class="site-logo-footer">
+
+
+
+
+             
+<div id="chartContainer" style="height: 400px;
+ width:
+  200%;
+  ">
+   
+ </div>
+
+
+
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row mb-4 text-center">
+          <div class="col">
+            
+        </div>
+        <div class="row mt-5 justify-content-center">
+          <div class="col-md-7 text-center">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
+    </div>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-migrate-3.0.0.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/bootstrap-datepicker.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/aos.js"></script>
+  
+
+    <script src="js/typed.js"></script>
+            <script>
+            var typed = new Typed('.typed-words', {
+            strings: ["Business"," Startups"," Organization", " Company"],
+            typeSpeed: 80,
+            backSpeed: 80,
+            backDelay: 4000,
+            startDelay: 1000,
+            loop: true,
+            showCursor: true
+            });
+            </script>
+
+
+    <script src="js/main.js"></script>
+
+  </body>
+
+</html>
+
